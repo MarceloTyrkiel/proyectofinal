@@ -1,0 +1,433 @@
+$color:grey;
+$color2:honeydew;
+@import "tipografia";
+//Uso del mixin con parametros para definir bordes
+@mixin bordes ($medida, $colour, $medidar){
+  border: $medida solid $colour;
+  border-radius: $medidar;   
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+body{
+    .header{
+        font-family: $poppins;
+        .navbar-expand-lg .navbar-collapse{
+            justify-content: flex-end;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+                    
+            .logo__imagen{
+                width: 50px;
+                padding-left: 20px;
+            } 
+            .navbar-brand{
+                padding-left: 10px;
+            }  
+        }
+    }
+    .containercarousel{
+        height: 87vh;
+    }
+    // Uso del map-get
+    $estilos:(
+        alineacion:flex,
+        espaciado:space-between,
+        alineamiento: center,
+        letra: $poppins,
+        ancho: 100%   
+    );
+
+    .footer{
+        display: map-get($estilos,alineacion);
+        justify-content: map-get($estilos,espaciado);
+        align-items: map-get($estilos,alineamiento);
+        font-family: map-get($estilos,letra);
+        width: 100%map-get($estilos,ancho);
+        padding-top: 10px;        
+        .texto{
+               font-size: 16px;
+        }
+
+        .email{
+                padding-left: 10px;
+        }
+
+        .logosredes{
+            height:100%;    
+        
+
+            .logosredes__wa{
+                width: 20px;
+            }
+            .logosredes__instagram{
+                    width: 20px;
+                    padding-left: 2px;
+            }
+            .logosredes__face{
+                    width: 20px;
+                    padding-left: 2px;
+            } 
+        }
+    }   
+    
+
+    .main{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: black;
+        color: $color2;
+        font-family: $dosis;
+        height:85vh;
+        
+         
+        .ladoizquierdo{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          
+
+            h2{
+               margin-bottom: 30px;
+               margin-top: 30px;
+    
+            }
+            .label{
+                margin-bottom: 30px;
+                flex-direction: column;
+                display: flex;
+            } 
+            .botonera{
+                margin-bottom: 40px;
+                margin-top: 20px;
+            }
+                .boton{
+                   width:100px;
+                   height: 35px;
+                   background-color: $color;
+                   border-radius: 15px
+            }
+        } 
+    }
+       
+    .ladoderecho{
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+    
+            .logo__imagen{
+                border: 1px solid $color2;
+            }
+    }
+    
+    .pasion{
+            display: flex;
+            justify-content: space-evenly;
+            background: url(../assets/img/textura.jpg);
+            height:85vh;
+
+            .pasion1{
+            font-family: $dosis;
+            }
+            .pasionizquierda {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+        }
+    }
+         //Aplico GRID para ubicar las fotos en pagina quehago 
+    #grilla {
+            display: grid;
+            grid-template-areas:
+            "foto14 foto14 foto16"
+            "foto5 texto1 foto16"
+            "foto5 texto1 foto10";
+            grid-template-rows: 2.24fr 1fr 1.52fr;
+            grid-template-columns: 1.33fr 1.9fr 1fr;
+            grid-row-gap : 10px;
+            grid-column-gap: 10px;
+            height:87vh;
+   
+             
+            //Declaro mi mapa
+            $fotos:(
+                foto14:foto14,
+                foto16:foto16,
+                foto10:foto10,
+                foto5:foto5
+            );    
+            //Creamos el bucle para usar los valores del mapa
+            @each $foto, $area in $fotos {
+                .foto--#{$foto}{
+                    grid-area: $area;
+                    .logo__imagen{
+                     @include bordes (1px,black,22px)
+                    }
+                }
+            }
+         
+            .texto1{
+                grid-area: texto1;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-direction: column;
+                @include bordes (1px,black,15px);
+                box-shadow: 5px 5px 5px black;
+                padding: 70px;
+                background: url(../assets/img/textura.jpg);
+            
+             .texto{
+                font-family: $dosis;
+                width: 100%;
+                text-align: center;
+             }
+             .titulo{
+                font-family: $dosis;
+                text-align: center;
+             }
+             .boton{
+                width: 100px;
+                border-radius: 15px;
+                text-decoration: none;
+                margin-top: 20px;
+                
+            }
+        }  
+    }
+    //pagina prensa .
+    
+    .mainprensa{
+        background: url(../assets/img/piedras.JPG);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        height:100vh;
+
+        .publicidad{
+            @include bordes (5px,black,0px);
+        }
+
+        .botonesprensa{   
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            .botonprensa{
+                width: 100px;
+                height: 30px;
+                border-radius: 15px;
+                margin-top: 20px;
+                background-color:white;
+                .a{
+                    color: black;
+                    text-decoration: none;
+                }
+                    }
+            //Uso del extend para tomar las propiedades boton prensa        
+            
+            .botonprensa--inicio{
+                @extend .botonprensa;
+                background-color: rgb(235, 110, 68);
+                .b{
+                    color: black;
+                    text-decoration: none;
+                }   
+            }
+        }    
+    }        
+    /*vista mobile*/
+    /*De 340px a 576px*/
+     @media only screen and (min-width: 340px) and (max-width:576px){
+        .navbar-expand-lg .navbar-collapse{justify-content: flex-end;}
+        .footer{
+           display: flex;
+            flex-direction: column; 
+            justify-content: space-between;
+            align-items: flex-start;
+               
+         .email{
+            font-size:8px;
+         }
+         .texto{
+            font-size: 8px;
+          }
+         .logosredes{
+            padding-top: 1 px;
+            margin-top: 1 px;
+          }
+         .logosredes__face{
+            width:5px;
+          }
+         .logosredes__instagram,
+         .logosredes__wa{
+            width: 4px;
+          } 
+        }
+     
+        .ladoderecho{
+            .logo__imagen{
+              width: 0px;
+            }
+            .texto{
+               font-size: 8px;
+             }
+            .label{
+                width:50%;
+            }
+            h5{
+                width: 40px;
+                margin-top: 80px;
+            }
+        }
+        
+    } 
+
+
+/*De 576px a 768px*/
+@media only screen and (min-width: 576px) and (max-width:767px) {
+            .navbar-expand-lg .navbar-collapse{justify-content: flex-end;}
+            .footer{
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+            
+            .logo__imagen{
+                width:175px;
+            }
+                .navbar-brand{
+                font-size: 12px;
+            }
+                .email{
+                font-size:10px;
+            }
+                .texto{
+                font-size: 10px;
+            }
+            .logosredes{
+                padding-top: 1 px;
+                margin-top: 1 px;
+            }
+            .logosredes__face{
+                width:5px;
+            }
+                .logosredes__instagram,
+                .logosredes__wa{
+                width: 6px;
+            } 
+        }   
+
+    }
+/*De 768 px a 992 px*/
+@media  only screen and (min-width: 768px) and (max-width: 992px) { 
+    .navbar-expand-lg .navbar-collapse{justify-content: flex-end;}
+    .footer{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+       
+      .email{
+           font-size: 12px;
+       }
+      .texto{
+           font-size: 12px;
+        } 
+    
+       .logosredes{
+           padding-top: 1 px;
+           margin-top: 1 px;
+        }
+
+      .logosredes__face{
+        width:7px;
+        }   
+       .logosredes__instagram,
+       .logosredes__wa{
+            width: 10px;
+        }
+    }    
+}
+
+    /* De 992px a 1200 px*/
+    @media only screen and (min-width: 992px) and (max-width: 1200px) { 
+    .navbar-expand-lg .navbar-collapse{justify-content: flex-end;}
+    .footer{
+       display: flex;
+       justify-content: space-between;
+    }
+    #grilla {
+        display: grid;
+        grid-template-areas:
+        "foto14 foto14 foto16"
+        "foto5 texto1 foto16"
+        "foto5 texto1 foto10";
+        grid-template-rows: 2.24fr 1fr 1.52fr;
+        grid-template-columns: 1.33fr 1.92fr 1fr;
+        grid-row-gap : 10px;
+        grid-column-gap: 10px;
+        height: 80vh;
+       
+        //Declaro mi mapa
+        $fotos:(
+            foto14:foto14,
+            foto16:foto16,
+            foto10:foto10,
+            foto5:foto5
+        );    
+        //Creamos el bucle para usar los valores del mapa
+        @each $foto, $area in $fotos {
+            .foto--#{$foto}{
+                grid-area: $area;
+                .logo__imagen{
+                 @include bordes (1px,black,22px)
+                }
+            }
+        }
+     
+        .texto1{
+            grid-area: texto1;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            //border: 1px solid black;
+            @include bordes (1px,black,15px);
+            //border-radius: 15px;
+            box-shadow: 5px 5px 5px black;
+            padding: 70px;
+            background: url(../assets/img/textura.jpg);
+        
+         .texto{
+            font-family: $dosis;
+            width: 100%;
+            text-align: center;
+         }
+         .titulo{
+            font-family: $dosis;
+            text-align: center;
+         }
+         .boton{
+            width: 100px;
+            border-radius: 15px;
+            text-decoration: none;
+            margin-top: 20px;
+            
+           }
+        }  
+    }    
+   }
+}
+
+
+              
+
+          
+    
+  

@@ -1,0 +1,587 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /*vista mobile*/
+  /*De 340px a 576px*/
+  /*De 576px a 768px*/
+  /*De 768 px a 992 px*/
+  /* De 992px a 1200 px*/
+}
+
+body .header {
+  font-family: "Poppins", sans-serif;
+}
+
+body .header .navbar-expand-lg .navbar-collapse {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+body .header .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .header .logo .logo__imagen {
+  width: 50px;
+  padding-left: 20px;
+}
+
+body .header .logo .navbar-brand {
+  padding-left: 10px;
+}
+
+body .containercarousel {
+  height: 87vh;
+}
+
+body .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Poppins", sans-serif;
+  width: 100% 100%;
+  padding-top: 10px;
+}
+
+body .footer .texto {
+  font-size: 16px;
+}
+
+body .footer .email {
+  padding-left: 10px;
+}
+
+body .footer .logosredes {
+  height: 100%;
+}
+
+body .footer .logosredes .logosredes__wa {
+  width: 20px;
+}
+
+body .footer .logosredes .logosredes__instagram {
+  width: 20px;
+  padding-left: 2px;
+}
+
+body .footer .logosredes .logosredes__face {
+  width: 20px;
+  padding-left: 2px;
+}
+
+body .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: black;
+  color: honeydew;
+  font-family: "Dosis", sans-serif;
+  height: 85vh;
+}
+
+body .main .ladoizquierdo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .main .ladoizquierdo h2 {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+body .main .ladoizquierdo .label {
+  margin-bottom: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .main .ladoizquierdo .botonera {
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+body .main .ladoizquierdo .boton {
+  width: 100px;
+  height: 35px;
+  background-color: grey;
+  border-radius: 15px;
+}
+
+body .ladoderecho {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .ladoderecho .logo__imagen {
+  border: 1px solid honeydew;
+}
+
+body .pasion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background: url(../assets/img/textura.jpg);
+  height: 85vh;
+}
+
+body .pasion .pasion1 {
+  font-family: "Dosis", sans-serif;
+}
+
+body .pasion .pasionizquierda {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #grilla {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "foto14 foto14 foto16" "foto5 texto1 foto16" "foto5 texto1 foto10";
+  -ms-grid-rows: 2.24fr 1fr 1.52fr;
+      grid-template-rows: 2.24fr 1fr 1.52fr;
+  -ms-grid-columns: 1.33fr 1.9fr 1fr;
+      grid-template-columns: 1.33fr 1.9fr 1fr;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  height: 87vh;
+}
+
+body #grilla .foto--foto14 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: foto14;
+}
+
+body #grilla .foto--foto14 .logo__imagen {
+  border: 1px solid black;
+  border-radius: 22px;
+}
+
+body #grilla .foto--foto16 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: foto16;
+}
+
+body #grilla .foto--foto16 .logo__imagen {
+  border: 1px solid black;
+  border-radius: 22px;
+}
+
+body #grilla .foto--foto10 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: foto10;
+}
+
+body #grilla .foto--foto10 .logo__imagen {
+  border: 1px solid black;
+  border-radius: 22px;
+}
+
+body #grilla .foto--foto5 {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: foto5;
+}
+
+body #grilla .foto--foto5 .logo__imagen {
+  border: 1px solid black;
+  border-radius: 22px;
+}
+
+body #grilla .texto1 {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: texto1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid black;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 5px black;
+          box-shadow: 5px 5px 5px black;
+  padding: 70px;
+  background: url(../assets/img/textura.jpg);
+}
+
+body #grilla .texto1 .texto {
+  font-family: "Dosis", sans-serif;
+  width: 100%;
+  text-align: center;
+}
+
+body #grilla .texto1 .titulo {
+  font-family: "Dosis", sans-serif;
+  text-align: center;
+}
+
+body #grilla .texto1 .boton {
+  width: 100px;
+  border-radius: 15px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+body .mainprensa {
+  background: url(../assets/img/piedras.JPG);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+body .mainprensa .publicidad {
+  border: 5px solid black;
+  border-radius: 0px;
+}
+
+body .mainprensa .botonesprensa {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .mainprensa .botonesprensa .botonprensa, body .mainprensa .botonesprensa .botonprensa--inicio {
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  margin-top: 20px;
+  background-color: white;
+}
+
+body .mainprensa .botonesprensa .botonprensa .a, body .mainprensa .botonesprensa .botonprensa--inicio .a {
+  color: black;
+  text-decoration: none;
+}
+
+body .mainprensa .botonesprensa .botonprensa--inicio {
+  background-color: #eb6e44;
+}
+
+body .mainprensa .botonesprensa .botonprensa--inicio .b {
+  color: black;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 340px) and (max-width: 576px) {
+  body .navbar-expand-lg .navbar-collapse {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  body .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  body .footer .email {
+    font-size: 8px;
+  }
+  body .footer .texto {
+    font-size: 8px;
+  }
+  body .footer .logosredes {
+    padding-top: 1 px;
+    margin-top: 1 px;
+  }
+  body .footer .logosredes__face {
+    width: 5px;
+  }
+  body .footer .logosredes__instagram,
+  body .footer .logosredes__wa {
+    width: 4px;
+  }
+  body .ladoderecho .logo__imagen {
+    width: 0px;
+  }
+  body .ladoderecho .texto {
+    font-size: 8px;
+  }
+  body .ladoderecho .label {
+    width: 50%;
+  }
+  body .ladoderecho h5 {
+    width: 40px;
+    margin-top: 80px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  body .navbar-expand-lg .navbar-collapse {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  body .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  body .footer .logo__imagen {
+    width: 175px;
+  }
+  body .footer .navbar-brand {
+    font-size: 12px;
+  }
+  body .footer .email {
+    font-size: 10px;
+  }
+  body .footer .texto {
+    font-size: 10px;
+  }
+  body .footer .logosredes {
+    padding-top: 1 px;
+    margin-top: 1 px;
+  }
+  body .footer .logosredes__face {
+    width: 5px;
+  }
+  body .footer .logosredes__instagram,
+  body .footer .logosredes__wa {
+    width: 6px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  body .navbar-expand-lg .navbar-collapse {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  body .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  body .footer .email {
+    font-size: 12px;
+  }
+  body .footer .texto {
+    font-size: 12px;
+  }
+  body .footer .logosredes {
+    padding-top: 1 px;
+    margin-top: 1 px;
+  }
+  body .footer .logosredes__face {
+    width: 7px;
+  }
+  body .footer .logosredes__instagram,
+  body .footer .logosredes__wa {
+    width: 10px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  body .navbar-expand-lg .navbar-collapse {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  body .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  body #grilla {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "foto14 foto14 foto16" "foto5 texto1 foto16" "foto5 texto1 foto10";
+    -ms-grid-rows: 2.24fr 1fr 1.52fr;
+        grid-template-rows: 2.24fr 1fr 1.52fr;
+    -ms-grid-columns: 1.33fr 1.92fr 1fr;
+        grid-template-columns: 1.33fr 1.92fr 1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    height: 80vh;
+  }
+  body #grilla .foto--foto14 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: foto14;
+  }
+  body #grilla .foto--foto14 .logo__imagen {
+    border: 1px solid black;
+    border-radius: 22px;
+  }
+  body #grilla .foto--foto16 {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 3;
+    grid-area: foto16;
+  }
+  body #grilla .foto--foto16 .logo__imagen {
+    border: 1px solid black;
+    border-radius: 22px;
+  }
+  body #grilla .foto--foto10 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    grid-area: foto10;
+  }
+  body #grilla .foto--foto10 .logo__imagen {
+    border: 1px solid black;
+    border-radius: 22px;
+  }
+  body #grilla .foto--foto5 {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: foto5;
+  }
+  body #grilla .foto--foto5 .logo__imagen {
+    border: 1px solid black;
+    border-radius: 22px;
+  }
+  body #grilla .texto1 {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    grid-area: texto1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border: 1px solid black;
+    border-radius: 15px;
+    -webkit-box-shadow: 5px 5px 5px black;
+            box-shadow: 5px 5px 5px black;
+    padding: 70px;
+    background: url(../assets/img/textura.jpg);
+  }
+  body #grilla .texto1 .texto {
+    font-family: "Dosis", sans-serif;
+    width: 100%;
+    text-align: center;
+  }
+  body #grilla .texto1 .titulo {
+    font-family: "Dosis", sans-serif;
+    text-align: center;
+  }
+  body #grilla .texto1 .boton {
+    width: 100px;
+    border-radius: 15px;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
