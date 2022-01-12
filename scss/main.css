@@ -85,105 +85,116 @@ body .footer .logosredes .logosredes__face {
 }
 
 body .main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  margin: 0;
+  min-height: 85vh;
+  display: -ms-grid;
+  display: grid;
   background-color: black;
-  color: honeydew;
-  font-family: "Dosis", sans-serif;
-  height: 85vh;
+  color: whitesmoke;
+  -ms-grid-columns: repeat 2, 1fr;
+      grid-template-columns: repeat 2, 1fr;
+  -ms-grid-rows: repeat 6, 1fr;
+      grid-template-rows: repeat 6, 1fr;
+      grid-template-areas: "envianos foto" "nombre   foto" "correo   foto" "mensaje  foto" "mensaje  foto" "enviar   celular";
 }
 
-body .main .ladoizquierdo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+body label {
+  display: block;
 }
 
-body .main .ladoizquierdo h2 {
-  margin-bottom: 30px;
-  margin-top: 30px;
+body .envianos {
+  padding-top: 30px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: envianos;
+  text-align: center;
 }
 
-body .main .ladoizquierdo .label {
-  margin-bottom: 30px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+body .nombre {
+  text-align: center;
 }
 
-body .main .ladoizquierdo .botonera {
-  margin-bottom: 40px;
-  margin-top: 20px;
+body .correo {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: correo;
+  text-align: center;
 }
 
-body .main .ladoizquierdo .boton {
-  width: 100px;
-  height: 35px;
-  background-color: grey;
-  border-radius: 15px;
+body .mensaje {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: mensaje;
+  text-align: center;
 }
 
-body .ladoderecho {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+body .enviar {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: enviar;
+  text-align: center;
 }
 
-body .ladoderecho .logo__imagen {
-  border: 1px solid honeydew;
+body .foto {
+  padding-top: 30px;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 2;
+  grid-area: foto;
+}
+
+body .celular {
+  -ms-grid-row: 6;
+  -ms-grid-column: 2;
+  grid-area: celular;
 }
 
 body .pasion {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  background: url(../assets/img/textura.jpg);
-  height: 85vh;
-}
-
-body .pasion .pasion1 {
+  margin: 0;
+  min-height: 85vh;
+  display: -ms-grid;
+  display: grid;
+  background-color: black;
+  color: whitesmoke;
   font-family: "Dosis", sans-serif;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (auto)[3];
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas: "pasionfoto   pasiontitulo" "pasionfoto   pasiontexto" "pasionfoto   pasiontexto";
 }
 
-body .pasion .pasionizquierda {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+body .pasionfoto {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: pasionfoto;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+body .pasiontitulo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: pasiontitulo;
+  text-align: center;
+  padding-top: 15px;
+}
+
+body .pasiontexto {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: pasiontexto;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 60%;
 }
 
 body #grilla {
@@ -357,19 +368,16 @@ body .mainprensa .botonesprensa .botonprensa--inicio .b {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-  }
-  body .footer .email {
-    font-size: 8px;
   }
   body .footer .texto {
     font-size: 8px;
@@ -385,18 +393,102 @@ body .mainprensa .botonesprensa .botonprensa--inicio .b {
   body .footer .logosredes__wa {
     width: 4px;
   }
-  body .ladoderecho .logo__imagen {
-    width: 0px;
+  body .main {
+    margin: 0;
+    min-height: 85vh;
+    display: -ms-grid;
+    display: grid;
+    background-color: black;
+    color: whitesmoke;
+    -ms-grid-columns: repeat 1, 1fr;
+        grid-template-columns: repeat 1, 1fr;
+    -ms-grid-rows: repeat 8, minmax(300px, 100px);
+        grid-template-rows: repeat 8, minmax(300px, 100px);
+        grid-template-areas: "foto" "envianos" "celular" "nombre" "correo" "mensaje" "mensaje" "enviar";
   }
-  body .ladoderecho .texto {
-    font-size: 8px;
+  body label {
+    display: block;
   }
-  body .ladoderecho .label {
-    width: 50%;
+  body .envianos {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: envianos;
+    text-align: center;
   }
-  body .ladoderecho h5 {
-    width: 40px;
-    margin-top: 80px;
+  body .nombre {
+    text-align: center;
+  }
+  body .correo {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    grid-area: correo;
+    text-align: center;
+  }
+  body .mensaje {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: mensaje;
+    text-align: center;
+  }
+  body .enviar {
+    -ms-grid-row: 8;
+    -ms-grid-column: 1;
+    grid-area: enviar;
+    text-align: center;
+  }
+  body .foto {
+    padding-top: 30px;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: foto;
+  }
+  body .celular {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: celular;
+    text-align: center;
+  }
+  body .pasion {
+    margin: 0;
+    min-height: 85vh;
+    display: -ms-grid;
+    display: grid;
+    background-color: black;
+    color: whitesmoke;
+    font-family: "Dosis", sans-serif;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    -ms-grid-rows: (auto)[3];
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: "pasiontitulo" "pasionfoto" "pasiontexto";
+  }
+  body .pasionfoto {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: pasionfoto;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  body .pasiontitulo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: pasiontitulo;
+    text-align: center;
+    padding-top: 10px;
+  }
+  body .pasiontexto {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: pasiontexto;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    width: 100%;
   }
 }
 
@@ -417,15 +509,6 @@ body .mainprensa .botonesprensa .botonprensa--inicio .b {
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  body .footer .logo__imagen {
-    width: 175px;
-  }
-  body .footer .navbar-brand {
-    font-size: 12px;
-  }
-  body .footer .email {
-    font-size: 10px;
-  }
   body .footer .texto {
     font-size: 10px;
   }
@@ -439,6 +522,36 @@ body .mainprensa .botonesprensa .botonprensa--inicio .b {
   body .footer .logosredes__instagram,
   body .footer .logosredes__wa {
     width: 6px;
+  }
+  body .pasionfoto {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 1;
+    grid-area: pasionfoto;
+    justify-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  body .pasiontitulo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: pasiontitulo;
+    text-align: center;
+    padding-top: 15px;
+  }
+  body .pasiontexto {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    grid-area: pasiontexto;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 90%;
   }
 }
 
