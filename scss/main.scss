@@ -1,12 +1,13 @@
 $color: grey;
 $color2: honeydew;
+$bordes : 1px solid black;
+$op : 1.00;
 @import "tipografia";
 //Uso del mixin con parametros para definir bordes
 @mixin bordes($medida, $colour, $medidar) {
   border: $medida solid $colour;
   border-radius: $medidar;
 }
-
 * {
   padding: 0;
   margin: 0;
@@ -38,7 +39,6 @@ body {
     width: 100%;  
     height: 650px;
     object-fit: cover;
-
   }
   // Uso del map-get
   $estilos: (
@@ -48,7 +48,7 @@ body {
     letra: $poppins,
     ancho: 100%,
   );
-
+   //FOOTER
   .footer {
     display: map-get($estilos, alineacion);
     justify-content: map-get($estilos, espaciado);
@@ -59,14 +59,11 @@ body {
     .texto {
       font-size: 16px;
     }
-
     .email {
       padding-left: 10px;
     }
-
     .logosredes {
       height: 100%;
-
       .logosredes__wa {
         width: 20px;
       }
@@ -80,7 +77,7 @@ body {
       }
     }
   }
-
+    // PAGINA CONTACTO
   .main {
     margin: 0;
     min-height: 85vh;
@@ -96,7 +93,7 @@ body {
       "mensaje  foto"
       "mensaje  foto"
       "enviar   celular";
-  }
+    }
      label{
        display:block;
      }
@@ -119,7 +116,22 @@ body {
     .enviar {
       grid-area: enviar;
       text-align:center;
-    }
+        a:hover {
+          font-size: 15px;
+          font-weight: bold;
+        }
+        .boton{
+          width: 100px;
+          background-color: white;
+          color: black;
+          font-size: 16px;
+          font-weight:normal;
+          .a {
+            color: black;
+            text-decoration: none;
+          }
+        }  
+      }
     .foto {
       padding-top: 30px;
       grid-area: foto;
@@ -128,7 +140,7 @@ body {
       grid-area: celular;
     }
   
-  //Aplico GRID en pagina quien soy
+  // PAGINA QUIEN SOY
   .pasion {    
     margin: 0;
     min-height: 85vh;
@@ -148,7 +160,6 @@ body {
       grid-area: pasionfoto;
       justify-self: center;
       align-self: center;
-      
     }
     .pasiontitulo {
       grid-area: pasiontitulo;
@@ -162,37 +173,32 @@ body {
       width:60%;
     }
     
-  
-  //Aplico GRID para ubicar las fotos en pagina quehago
+  //PAGINA PROYECTO
   #grilla {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-auto-rows: 210px;
     gap:10px;
-    .logo__imagen{
+    .imagen{
       width: 100%;
       height: 100%;
       object-fit: cover;
-     
     }
-
-    .foto--galeria:nth-child(1) {
+    .galeria:nth-child(1) {
       grid-column-start: span 3;
     } 
-    .foto--galeria:nth-child(2) {
+    .galeria:nth-child(2) {
       grid-column-start: span 1;
       grid-row-start: span 2;
     }
-    .foto--galeria:nth-child(3) {
+    .galeria:nth-child(3) {
       grid-column: 1/3;
       grid-row: 2/4;
     }
-    .foto--galeria:nth-child(4) {
+    .galeria:nth-child(4) {
       grid-column: 4/5;
       grid-row: 3/4;
     }
-    
-
     .texto1 {
       grid-column: 3/4;
       grid-row: 2/4;
@@ -200,101 +206,111 @@ body {
       justify-content: space-evenly;
       align-items: center;
       flex-direction: column;
-      @include bordes(1px, black, 15px);
-      box-shadow: 5px 5px 5px black;
-      background: url(../assets/img/textura.jpg);
-
-      .texto {
-        font-family: $dosis;
-        width: 90%;
-        text-align: center;
-      }
-      .titulo {
-        font-family: $dosis;
-        text-align: center;
-      }
-      .boton {
-        width: 100px;
-        border-radius: 15px;
-        text-decoration: none;
-        margin-top: 20px;
-      }
+      @include bordes(1px, black, 0);
+      background: black;
+      color: white;
+        a:hover {
+          color: black;
+          font-weight: bold;
+        }
+        .texto {
+          font-family: $dosis;
+          width: 90%;
+          text-align: center;
+        }
+        .titulo {
+          font-family: $dosis;
+          text-align: center;
+        }
+        .boton {
+          width: 100px;
+          height: 30px;
+          margin-top: 20px;
+          background-color: white;
+          color: black;
+          text-decoration: none;
+          font-size: 16px;
+        }
+        .boton a {
+          color: black;
+          text-decoration: none;
+        }   
+         
+        
+      
     }
   }
-  // Prensa
-  //Aplico GRID para ubicar las fotos en pagina quehago
+  // PRENSA
+  //Aplico GRID para ubicar las fotos en pagina 
   #grillaprensa {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-auto-rows: 200px;
     gap:10px;
-    .imagen--prensa{
+    .prensa{
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border: $bordes;
     }
-
-    .foto--prensa:nth-child(1) {
+    .fotoprensa:nth-child(1) {
       grid-column: 1/2;
       grid-row: 1/2;
-      opacity: 0.50;
+      opacity: $op;
     } 
-    .foto--prensa:nth-child(2) {
+    .fotoprensa:nth-child(2) {
       grid-column: 1/2;
       grid-row: 2/3;
-      opacity: 0.50;
+      opacity: $op;
     }
-    .foto--prensa:nth-child(3) {
+    .fotoprensa:nth-child(3) {
       grid-column: 1/2;
       grid-row: 3/4;
-      opacity: 0.50;
+      opacity: $op;;
     }
-    .foto--prensa:nth-child(4) {
+    .fotoprensa:nth-child(4) {
       grid-column: 1/2;
       grid-row: 4/5;
-      opacity: 0.50;
+      opacity: $op;;
     }
-    .foto--prensa:nth-child(5) {
+    .fotoprensa:nth-child(5) {
       grid-column: 4/5;
       grid-row: 1/2;
-      opacity: 0.50;
+      opacity: $op;;
     } 
-    .foto--prensa:nth-child(6) {
+    .fotoprensa:nth-child(6) {
       grid-column: 4/5;
       grid-row: 2/3;
-      opacity: 0.50;
+      opacity: $op;;
     }
-    .foto--prensa:nth-child(7) {
+    .fotoprensa:nth-child(7) {
       grid-column: 4/5;
       grid-row: 3/4;
-      opacity: 0.50;
+      opacity: $op;;
     }
-    .foto--prensa:nth-child(8) {
+    .fotoprensa:nth-child(8) {
       grid-column: 4/5;
       grid-row: 4/5;
-      opacity: 0.50;
+      opacity: $op;;
     }
-    .foto--prensa:nth-child(9) {
+    .fotoprensa:nth-child(9) {
       grid-column: 2/3;
       grid-row: 2/4;
-      border: 1px solid black;
     }
-    .foto--prensa:nth-child(10) {
+    .fotoprensa:nth-child(10) {
       grid-column: 3/4;
       grid-row: 2/4;
-      border: 1px solid black;
     }
-    .foto--prensa:nth-child(11) {
+    .fotoprensa:nth-child(11) {
       grid-column: 2/3;
       grid-row: 4/5;
-      opacity: 0.50;
+      opacity: $op;;
     }
-    .foto--prensa:nth-child(12) {
+    .fotoprensa:nth-child(12) {
       grid-column: 3/4;
       grid-row: 4/5;
-      opacity: 0.50;
+      opacity: $op;;
     }
-    
     .textoprensa{
       width: 100%;
       display:flex;
@@ -303,41 +319,41 @@ body {
       text-align: center;
       grid-column: 2/4;
       grid-row: 1/2;
-      background: url(../assets/img/textura.jpg);
+      background: black;
       font-family: $dosis;
-      border: 1px solid black;
+      border: $bordes;
+      color: white;
     }
     .botonesprensa {
       display: flex;
       justify-content: center;
       align-items: center;
-          .botonprensa {
-                width: 100px;
-                height: 30px;
-                border-radius: 15px;
-                margin-top: 20px;
-                background-color: white;
-                .a {
-                  color: black;
-                  text-decoration: none;
-                }
-              } 
-          .botonprensa--inicio {
-                @extend .botonprensa;
-                background-color: rgb(235, 110, 68);
-                .b {
-                  color: black;
-                  text-decoration: none;
-                }
-              }
-          
-
-    }
-
-  
-
+        a:hover {
+          font-size: 15px;
+          font-weight: bold;
+        }
+        .botonprensa {
+          width: 100px;
+          height: 30px;
+          margin-top: 20px;
+          background-color: white;
+          .a {
+            color: black;
+            text-decoration: none;
+          }
+        } 
+        .botonprensa--inicio {
+          @extend .botonprensa;
+          background-color: rgb(235, 110, 68);
+          .b {
+            color: black;
+            text-decoration: none;
+          }
+        }
+      }
   }
-  /*vista mobile*/
+
+  /*VISTA MOBILE*/
   /*De 340px a 576px*/
   @media only screen and (min-width: 200px) and (max-width: 576px) {
     .navbar-expand-lg .navbar-collapse {
@@ -348,7 +364,6 @@ body {
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
-
       .texto {
         font-size: 8px;
       }
@@ -370,13 +385,11 @@ body {
     .alinea{
       height: 500px;
       align-items: center;
-      
     }
     .forma{
       width: 100%;  
       object-fit: cover;
       height: 500px;
-      
     }
 
     .main{
@@ -396,13 +409,11 @@ body {
           "mensaje"
           "mensaje"
           "enviar";
-          
       }
-         label{
+        label{
            display:block;
          }
         .envianos {
-          
           grid-area: envianos;
           text-align:center;
         }
@@ -453,49 +464,45 @@ body {
         width: 35%;
         height:80%;
         object-fit: cover;
-
         }
       .pasiontitulo {
         grid-area: pasiontitulo;
         text-align: center;
         padding-top:10px;
-      }
+        }
       .pasiontexto {
         grid-area: pasiontexto;
         justify-self: center;
         align-self: flex-start;
         width:90%;
-      }
+        }
       #grilla {
         display: grid;
         grid-template-columns: repeat(4,1fr);
         grid-auto-rows: 150px;
         gap:10px;
-        .logo__imagen{
+        .imagen{
           width: 100%;
           height: 100%;
           object-fit: cover;
-         
         }
-    
-        .foto--galeria:nth-child(1) {
+        .galeria:nth-child(1) {
           grid-column: 1/5;
           grid-row: 1/2;
         } 
-        .foto--galeria:nth-child(2) {
+        .galeria:nth-child(2) {
           grid-column: 1/3;
           grid-row: 4/6;
         }
-        .foto--galeria:nth-child(3) {
+        .galeria:nth-child(3) {
           grid-column: 1/5;
           grid-row: 6/8;
-          }
-        .foto--galeria:nth-child(4) {
+        }
+        .galeria:nth-child(4) {
           grid-column: 3/5;
           grid-row: 4/6;
-          }
-           
-       
+        }
+          
         .texto1 {
           grid-column: 1/5;
           grid-row: 2/4;
@@ -503,13 +510,14 @@ body {
           justify-content: space-evenly;
           align-items: center;
           flex-direction: column;
-          @include bordes(1px, black, 15px);
-          box-shadow: 5px 5px 5px black;
-          background: url(../assets/img/textura.jpg);
+          @include bordes(1px, black, 0);
+          background: black;
+          color: white;
     
           .texto {
             font-family: $dosis;
-            width: 98%;
+            font-size: 14px;
+            width: 90%;
             text-align: center;
           }
           .titulo {
@@ -518,83 +526,86 @@ body {
           }
           .boton {
             width: 100px;
-            border-radius: 15px;
-            text-decoration: none;
+            height: 30px;
             margin-top: 20px;
+            background-color: white;
           }
+            .boton a {
+              color: black;
+              text-decoration: none;
+              font-size: 16px;
+            }
         }
       }
     // Prensa
-      //Aplico GRID para ubicar las fotos en pagina quehago
+      //Aplico GRID para ubicar las fotos 
       #grillaprensa {
         display: grid;
         grid-template-columns: 300px;
         grid-auto-rows: 200px;
         gap:10px;
-        .imagen--prensa{
+        .prensa{
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
-        .foto--prensa:nth-child(1) {
+        .fotoprensa:nth-child(1) {
           grid-row: 15/16;
           grid-column: 1/2;
-          opacity: 0.50;
+          opacity: $op;;
         } 
-        .foto--prensa:nth-child(2) {
+        .fotoprensa:nth-child(2) {
           grid-row: 6/7;
           grid-column: 1/2;
-          opacity: 0.50;
+          opacity: $op;;
         }
-        .foto--prensa:nth-child(3) {
+        .fotoprensa:nth-child(3) {
           grid-row: 7/8;
           grid-column: 1/2;
-          opacity: 0.50;
+          opacity: $op;;
         }
-        .foto--prensa:nth-child(4) {
+        .fotoprensa:nth-child(4) {
           grid-row: 8/9;
           grid-column: 1/2;
-          opacity: 0.50;
+          opacity: $op;;
         }
-        .foto--prensa:nth-child(5) {
+        .fotoprensa:nth-child(5) {
           grid-row: 9/10;
           grid-column: 1/2;
-          opacity: 0.50;
+          opacity: $op;;
         } 
-        .foto--prensa:nth-child(6) {
+        .fotoprensa:nth-child(6) {
           grid-row: 10/11;
           grid-column: 1/2;
-          opacity: 0.50;
+          opacity: $op;;
         }
-        .foto--prensa:nth-child(7) {
+        .fotoprensa:nth-child(7) {
           grid-row: 12/13;
           grid-column: 1/2;
-          opacity: 0.50;
+          opacity: $op;;
         }
-        .foto--prensa:nth-child(8) {
+        .fotoprensa:nth-child(8) {
           grid-row: 11/12;
           grid-column: 1/2;
-          opacity: 0.50;
+          opacity: $op;;
         }
-        .foto--prensa:nth-child(9) {
+        .fotoprensa:nth-child(9) {
           grid-row: 2/4;
           grid-column: 1/2;
-          border: 1px solid black;
         }
-        .foto--prensa:nth-child(10) {
+        .fotoprensa:nth-child(10) {
           grid-row: 4/6;
           grid-column: 1/2;
-          border: 1px solid black;
         }
-        .foto--prensa:nth-child(11) {
+        .fotoprensa:nth-child(11) {
           grid-row: 13/14;
           grid-column: 1/2;
-          opacity: 0.50;
+          opacity: $op;;
         }
-        .foto--prensa:nth-child(12) {
+        .fotoprensa:nth-child(12) {
           grid-row: 14/15;
           grid-column: 1/2;
-          opacity: 0.50;
+          opacity: $op;;
         }
         .textoprensa {
           width: 100%;
@@ -604,12 +615,13 @@ body {
           text-align: center;
           grid-row: 1/2;
           grid-column: 1/2;
-          background: url(../assets/img/textura.jpg);
+          background: black;
           font-family: $dosis;
-          border: 1px solid black;
+          border: $bordes;
+          color: white;
          }
        }
-    }
+  }
 
 
   /*De 576px a 768px*/
@@ -621,7 +633,6 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-
       .texto {
         font-size: 10px;
       }
@@ -637,13 +648,16 @@ body {
         width: 6px;
       }
     }
+    .envianos h2{
+      font-size: 18px;;
+    }
+
     .pasionfoto {
       grid-area: pasionfoto;
       justify-self: flex-start;
       align-self: flex-start;
-      margin-top:10px;
+      margin-top:40px;
       margin-left:10px;
-      
     }
     .pasiontitulo {
       grid-area: pasiontitulo;
@@ -661,31 +675,27 @@ body {
       grid-template-columns: repeat(4,1fr);
       grid-auto-rows: 150px;
       gap:10px;
-      .logo__imagen{
+      .imagen{
         width: 100%;
         height: 100%;
         object-fit: cover;
-       
       }
-  
-      .foto--galeria:nth-child(1) {
+      .galeria:nth-child(1) {
         grid-column: 1/5;
         grid-row: 1/2;
       } 
-      .foto--galeria:nth-child(2) {
+      .galeria:nth-child(2) {
         grid-column: 1/3;
         grid-row: 4/6;
       }
-      .foto--galeria:nth-child(3) {
+      .galeria:nth-child(3) {
         grid-column: 1/5;
         grid-row: 6/8;
-        }
-      .foto--galeria:nth-child(4) {
+      }
+      .galeria:nth-child(4) {
         grid-column: 3/5;
         grid-row: 4/6;
-        }
-         
-     
+      }
       .texto1 {
         grid-column: 1/5;
         grid-row: 2/4;
@@ -693,9 +703,9 @@ body {
         justify-content: space-evenly;
         align-items: center;
         flex-direction: column;
-        @include bordes(1px, black, 15px);
-        box-shadow: 5px 5px 5px black;
-        background: url(../assets/img/textura.jpg);
+        @include bordes(1px, black, 0);
+        background: black;
+        color: white;
   
         .texto {
           font-family: $dosis;
@@ -708,88 +718,88 @@ body {
         }
         .boton {
           width: 100px;
-          border-radius: 15px;
-          text-decoration: none;
+          height: 30px;
           margin-top: 20px;
+          background-color: white;
         }
+          .boton a {
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+          }
+        
       }
     }
     // Prensa
-      //Aplico GRID para ubicar las fotos en pagina quehago
+      //Aplico GRID para ubicar las fotos 
       #grillaprensa {
         display: grid;
         grid-template-columns: repeat(4,1fr);
         grid-auto-rows: 200px;
         gap:10px;
-        .imagen--prensa{
+        .prensa{
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
-
-        .foto--prensa:nth-child(1) {
+        .fotoprensa:nth-child(1) {
           grid-column: 1/2;
           grid-row: 1/2;
-          opacity: 0.50;
+          opacity: $op;;
         } 
-        .foto--prensa:nth-child(2) {
+        .fotoprensa:nth-child(2) {
           grid-column: 1/3;
           grid-row: 4/5;
-          opacity: 0.50;
+          opacity: $op;;
         }
-        .foto--prensa:nth-child(3) {
+        .fotoprensa:nth-child(3) {
           grid-column: 3/5;
           grid-row: 4/5;
-          opacity: 0.50;
+          opacity: $op;;
         }
-        
-        .foto--prensa:nth-child(4) {
+        .fotoprensa:nth-child(4) {
           grid-column: 4/5;
           grid-row: 1/2;
-          opacity: 0.50;
+          opacity: $op;;
         }
-        .foto--prensa:nth-child(5) {
+        .fotoprensa:nth-child(5) {
           grid-column: 1/3;
           grid-row: 5/6;
-          opacity: 0.50;
+          opacity: $op;;
         } 
-        .foto--prensa:nth-child(6) {
+        .fotoprensa:nth-child(6) {
           grid-column: 3/5;
           grid-row: 5/6;
-          opacity: 0.50;
+          opacity: $op;;
         }
-        .foto--prensa:nth-child(7) {
+        .fotoprensa:nth-child(7) {
           grid-column: 1/3;
           grid-row: 6/7;
-          opacity: 0.50;
+          opacity: $op;;
         }
-        
-        .foto--prensa:nth-child(8) {
+        .fotoprensa:nth-child(8) {
           grid-column: 3/5;
           grid-row: 6/7;
-          opacity: 0.50;
+          opacity: $op;;
         }
-        .foto--prensa:nth-child(9) {
+        .fotoprensa:nth-child(9) {
           grid-column: 1/3;
           grid-row: 2/4;
-          border: 1px solid black;
         }
-        .foto--prensa:nth-child(10) {
+        .fotoprensa:nth-child(10) {
           grid-column: 3/5;
           grid-row: 2/4;
-          border: 1px solid black;
         }
-        .foto--prensa:nth-child(11) {
+        .fotoprensa:nth-child(11) {
           grid-column: 1/3;
           grid-row: 7/8;
-          opacity: 0.50;
+          opacity: $op;
         }
-        .foto--prensa:nth-child(12) {
+        .fotoprensa:nth-child(12) {
           grid-column: 3/5;
           grid-row: 7/8;
-          opacity: 0.50;
+          opacity: $op;
         }
-        
         .textoprensa{
           width: 100%;
           display:flex;
@@ -798,11 +808,11 @@ body {
           text-align: center;
           grid-column: 2/4;
           grid-row: 1/2;
-          background: url(../assets/img/textura.jpg);
+          background: black;
           font-family: $dosis;
-          border: 1px solid black;
+          border: $bordes;
+          color: white;
          }
-
        }
     }   
   /*De 768 px a 992 px*/
@@ -820,12 +830,10 @@ body {
         .texto {
             font-size: 12px;
           }
-
         .logosredes {
             padding-top: 1 px;
             margin-top: 1 px;
           }
-
         .logosredes__face {
             width: 7px;
           }
@@ -834,33 +842,40 @@ body {
             width: 10px;
           }
         }
+        .pasionfoto {
+          grid-area: pasionfoto;
+          justify-self: flex-start;
+          align-self: flex-start;
+          margin-top:40px;
+          margin-left:10px;
+        }
         //Aplico GRID para ubicar las fotos en pagina quehago
     #grilla {
         display: grid;
         grid-template-columns: repeat(4,1fr);
         grid-auto-rows: 150px;
         gap:10px;
-        .logo__imagen{
+        .imagen{
           width: 100%;
           height: 100%;
           object-fit: cover;
           }
-        .foto--galeria:nth-child(1) {
+        .galeria:nth-child(1) {
           grid-column: 1/5;
           grid-row: 1/2;
         } 
-        .foto--galeria:nth-child(2) {
+        .galeria:nth-child(2) {
           grid-column: 1/3;
           grid-row: 4/6;
         }
-        .foto--galeria:nth-child(3) {
+        .galeria:nth-child(3) {
           grid-column: 1/5;
           grid-row: 6/8;
-          }
-        .foto--galeria:nth-child(4) {
+        }
+        .galeria:nth-child(4) {
           grid-column: 3/5;
           grid-row: 4/6;
-          }
+        }
         .texto1 {
           grid-column: 1/5;
           grid-row: 2/4;
@@ -868,9 +883,10 @@ body {
           justify-content: space-evenly;
           align-items: center;
           flex-direction: column;
-          @include bordes(1px, black, 15px);
-          box-shadow: 5px 5px 5px black;
-          background: url(../assets/img/textura.jpg);
+          @include bordes(1px, black, 0);
+          background: black;
+          color: white;
+    
           .texto {
             font-family: $dosis;
             width: 90%;
@@ -882,88 +898,87 @@ body {
           }
           .boton {
             width: 100px;
-            border-radius: 15px;
-            text-decoration: none;
+            height: 30px;
             margin-top: 20px;
+            background-color: white;
           }
-        }
+            .boton a {
+              color: black;
+              text-decoration: none;
+              font-size: 16px;
+            }
+        }  
       }  
     // Prensa
-      //Aplico GRID para ubicar las fotos en pagina quehago
+      //Aplico GRID para ubicar las fotos 
       #grillaprensa {
         display: grid;
         grid-template-columns: repeat(4,1fr);
         grid-auto-rows: 200px;
         gap:10px;
-        .imagen--prensa{
+        .prensa{
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
-
-        .foto--prensa:nth-child(1) {
+        .fotoprensa:nth-child(1) {
           grid-column: 1/2;
           grid-row: 1/2;
-          opacity: 0.50;
+          opacity: $op;
         } 
-        .foto--prensa:nth-child(2) {
+        .fotoprensa:nth-child(2) {
           grid-column: 1/3;
           grid-row: 4/5;
-          opacity: 0.50;
+          opacity: $op;
         }
-        .foto--prensa:nth-child(3) {
+        .fotoprensa:nth-child(3) {
           grid-column: 3/5;
           grid-row: 4/5;
-          opacity: 0.50;
+          opacity: $op;
         }
-        
-        .foto--prensa:nth-child(4) {
+        .fotoprensa:nth-child(4) {
           grid-column: 4/5;
           grid-row: 1/2;
-          opacity: 0.50;
+          opacity: $op;
         }
-        .foto--prensa:nth-child(5) {
+        .fotoprensa:nth-child(5) {
           grid-column: 1/3;
           grid-row: 5/6;
-          opacity: 0.50;
+          opacity: $op;
         } 
-        .foto--prensa:nth-child(6) {
+        .fotoprensa:nth-child(6) {
           grid-column: 3/5;
           grid-row: 5/6;
-          opacity: 0.50;
+          opacity: $op;
         }
-        .foto--prensa:nth-child(7) {
+        .fotoprensa:nth-child(7) {
           grid-column: 1/3;
           grid-row: 6/7;
-          opacity: 0.50;
+          opacity: $op;
         }
-        
-        .foto--prensa:nth-child(8) {
+        .fotoprensa:nth-child(8) {
           grid-column: 3/5;
           grid-row: 6/7;
-          opacity: 0.50;
+          opacity: $op;
         }
-        .foto--prensa:nth-child(9) {
+        .fotoprensa:nth-child(9) {
           grid-column: 1/3;
           grid-row: 2/4;
-          border: 1px solid black;
         }
-        .foto--prensa:nth-child(10) {
+        .fotoprensa:nth-child(10) {
           grid-column: 3/5;
           grid-row: 2/4;
-          border: 1px solid black;
         }
-        .foto--prensa:nth-child(11) {
+        .fotoprensa:nth-child(11) {
           grid-column: 1/3;
+          grid-row: 7/8;
+          opacity: $op;
+        }
+        .fotoprensa:nth-child(12) {
+          grid-column: 3/5;
           grid-row: 7/8;
           opacity: 0.50;
         }
-        .foto--prensa:nth-child(12) {
-          grid-column: 3/5;
-          grid-row: 7/8;
-          opacity: 0.50;
-        }
-        
         .textoprensa{
           width: 100%;
           display:flex;
@@ -972,55 +987,54 @@ body {
           text-align: center;
           grid-column: 2/4;
           grid-row: 1/2;
-          background: url(../assets/img/textura.jpg);
+          background: black;
           font-family: $dosis;
-          border: 1px solid black;
-         }
-
-       }
-      
+          border: $bordes;
+          color: white;
+        }
       }
+  }
 
       /* De 992px a 1200 px*/
-      @media only screen and (min-width: 992px) and (max-width: 1200px) {
-        .navbar-expand-lg .navbar-collapse {
-          justify-content: flex-end;
-        }
-        .footer {
-          display: flex;
-          justify-content: space-between;
-        }
-        
-        
-          .texto1 {
-            grid-area: texto1;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            flex-direction: column;
-            //border: 1px solid black;
-            @include bordes(1px, black, 15px);
-            //border-radius: 15px;
-            box-shadow: 5px 5px 5px black;
-            
-            background: url(../assets/img/textura.jpg);
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: flex-end;
+   }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+   }
+   .texto1 {
+    grid-column: 1/5;
+    grid-row: 2/4;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    @include bordes(1px, black, 0);
+    background: black;
+    color: white;
 
-            .texto {
-              font-family: $dosis;
-              width: 100%;
-              text-align: center;
-            }
-            .titulo {
-              font-family: $dosis;
-              text-align: center;
-            }
-            .boton {
-              width: 100px;
-              border-radius: 15px;
-              text-decoration: none;
-              margin-top: 20px;
-            }
-          }
-        }
-  
+    .texto {
+      font-family: $dosis;
+      width: 90%;
+      text-align: center;
+    }
+    .titulo {
+      font-family: $dosis;
+      text-align: center;
+    }
+    .boton {
+      width: 100px;
+      height: 30px;
+      margin-top: 20px;
+      background-color: white;
+    }
+      .boton a {
+        color: black;
+        text-decoration: none;
+        font-size: 16px;
+      }
+  }  
+}
 }
