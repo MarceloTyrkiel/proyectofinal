@@ -786,6 +786,9 @@ body #grillaprensa .botonesprensa .botonprensa--inicio .b {
     font-family: "Dosis", sans-serif;
     text-align: center;
   }
+  body #grilla .texto1 .tituloprensa {
+    width: 80%;
+  }
   body #grilla .texto1 .boton {
     width: 100px;
     height: 30px;
@@ -800,13 +803,13 @@ body #grillaprensa .botonesprensa .botonprensa--inicio .b {
   body #grillaprensa {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 300px;
-        grid-template-columns: 300px;
+    -ms-grid-columns: 500px;
+        grid-template-columns: 500px;
     grid-auto-rows: 200px;
     gap: 10px;
   }
   body #grillaprensa .prensa {
-    width: 100%;
+    width: 75%;
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
@@ -918,7 +921,7 @@ body #grillaprensa .botonesprensa .botonprensa--inicio .b {
     opacity: 1;
   }
   body #grillaprensa .textoprensa {
-    width: 100%;
+    width: 75%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1097,6 +1100,150 @@ body #grillaprensa .botonesprensa .botonprensa--inicio .b {
     color: black;
     text-decoration: none;
     font-size: 16px;
+  }
+  body #grilla #grillaprensa {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 600px;
+        grid-template-columns: 600px;
+    grid-auto-rows: 200px;
+    gap: 10px;
+  }
+  body #grilla #grillaprensa .prensa {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  body #grilla #grillaprensa .fotoprensa:nth-child(1) {
+    -ms-grid-row: 15;
+    -ms-grid-row-span: 1;
+    grid-row: 15/16;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    opacity: 1;
+  }
+  body #grilla #grillaprensa .fotoprensa:nth-child(2) {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    opacity: 1;
+  }
+  body #grilla #grillaprensa .fotoprensa:nth-child(3) {
+    -ms-grid-row: 7;
+    -ms-grid-row-span: 1;
+    grid-row: 7/8;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    opacity: 1;
+  }
+  body #grilla #grillaprensa .fotoprensa:nth-child(4) {
+    -ms-grid-row: 8;
+    -ms-grid-row-span: 1;
+    grid-row: 8/9;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    opacity: 1;
+  }
+  body #grilla #grillaprensa .fotoprensa:nth-child(5) {
+    -ms-grid-row: 9;
+    -ms-grid-row-span: 1;
+    grid-row: 9/10;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    opacity: 1;
+  }
+  body #grilla #grillaprensa .fotoprensa:nth-child(6) {
+    -ms-grid-row: 10;
+    -ms-grid-row-span: 1;
+    grid-row: 10/11;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    opacity: 1;
+  }
+  body #grilla #grillaprensa .fotoprensa:nth-child(7) {
+    -ms-grid-row: 12;
+    -ms-grid-row-span: 1;
+    grid-row: 12/13;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    opacity: 1;
+  }
+  body #grilla #grillaprensa .fotoprensa:nth-child(8) {
+    -ms-grid-row: 11;
+    -ms-grid-row-span: 1;
+    grid-row: 11/12;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    opacity: 1;
+  }
+  body #grilla #grillaprensa .fotoprensa:nth-child(9) {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    grid-row: 2/4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  body #grilla #grillaprensa .fotoprensa:nth-child(10) {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 2;
+    grid-row: 4/6;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  body #grilla #grillaprensa .fotoprensa:nth-child(11) {
+    -ms-grid-row: 13;
+    -ms-grid-row-span: 1;
+    grid-row: 13/14;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    opacity: 1;
+  }
+  body #grilla #grillaprensa .fotoprensa:nth-child(12) {
+    -ms-grid-row: 14;
+    -ms-grid-row-span: 1;
+    grid-row: 14/15;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    opacity: 1;
+  }
+  body #grilla #grillaprensa .textoprensa {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    text-align: center;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    background: black;
+    font-family: "Dosis", sans-serif;
+    border: 1px solid black;
+    color: white;
   }
   body #grillaprensa {
     display: -ms-grid;
